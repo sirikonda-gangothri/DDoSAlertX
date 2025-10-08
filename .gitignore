@@ -1,0 +1,19 @@
+# Dependency directories
+node_modules/
+.cache/
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Media (large)
+*.mp4
+*.avi
+*.mov
+*.zip
