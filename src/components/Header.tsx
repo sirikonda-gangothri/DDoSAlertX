@@ -28,6 +28,10 @@ const Header: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleDemoClick = () => {
+    window.open('https://ddosalertx.onrender.com/', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -101,13 +105,13 @@ const Header: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             className="hidden lg:block"
           >
-            <Link
-              to="/demo"
+            <button
+              onClick={handleDemoClick}
               className="bg-secondary-500 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 hover:bg-secondary-600 flex items-center space-x-2"
             >
               <Zap className="h-4 w-4" />
               <span>Try Demo</span>
-            </Link>
+            </button>
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -157,13 +161,15 @@ const Header: React.FC = () => {
                   transition={{ delay: navItems.length * 0.1 }}
                   className="pt-4"
                 >
-                  <Link
-                    to="/demo"
-                    onClick={() => setIsMenuOpen(false)}
+                  <button
+                    onClick={() => {
+                      handleDemoClick();
+                      setIsMenuOpen(false);
+                    }}
                     className="block w-full bg-secondary-500 text-white font-bold py-3 px-4 rounded-lg text-center transition-all duration-300"
                   >
                     Try Demo
-                  </Link>
+                  </button>
                 </motion.div>
               </div>
             </motion.div>
